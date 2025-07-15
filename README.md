@@ -6,6 +6,7 @@ DNS changer is a simple, flexible system for managing DNS settings on macOS. It 
 ## Features
 
 - Easily switch between predefined DNS configurations
+- Add or delete DNS configurations directly from CLI
 - Auto-completion for DNS names
 - Simple text-based configuration file for easy manual editing
 
@@ -27,21 +28,27 @@ DNS changer is a simple, flexible system for managing DNS settings on macOS. It 
 
 ## Usage
 
-To change your DNS settings, use the `setdns` command with sudo:
+To change your DNS settings, use the `setdns` command (with sudo, if needed):
 
 ```
-sudo setdns <dns_name>
+setdns <dns_name>
 ```
 
-For example:
+Add a new DNS configuration:
 ```
-sudo setdns electro
+setdns --add <name> <ip1> [ip2 ...]
+```
+
+Delete an existing DNS configuration:
+```
+setdns --delete <name>
 ```
 
 To see available options and usage information:
 ```
 setdns --help
 ```
+You can also use tab-completion to list available DNS names.
 
 ## Configuration
 
