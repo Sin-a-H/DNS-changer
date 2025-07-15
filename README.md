@@ -21,9 +21,9 @@ DNS changer is a simple, flexible system for managing DNS settings on macOS. It 
    This will:
    - Install the main `setdns` script
    - Set up the configuration file
-   - Install and configure bash completion
+   - Install and configure Zsh completion
 
-3. Restart your terminal or run `source ~/.bash_profile` to enable completion.
+3. Restart your terminal or run `source ~/.zshrc` to enable completion.
 
 ## Usage
 
@@ -57,6 +57,18 @@ electro 78.157.42.101 78.157.42.100
 ```
 
 You can edit this file manually to add, remove, or modify DNS configurations.
+
+## Uninstallation
+
+To remove the tool and its components, Run the uninstaller script:
+   ```
+   sudo bash uninstall.sh
+   ```
+
+   This will:
+   - delete the `setdns` command
+   - Remove the config file and zsh completion script
+   - Clean related lines from your `.zshrc` (with a backup)
 
 ## Contributing
 

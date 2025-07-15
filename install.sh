@@ -33,18 +33,17 @@ chmod +x "$COMPLETION_DIR/setdns"
 # Set up completion for current session
 source "$COMPLETION_DIR/setdns"
 
-# Update bash profile to source the completion script
-BASH_PROFILE="$HOME/.bash_profile"
-if [ ! -f "$BASH_PROFILE" ]; then
-    BASH_PROFILE="$HOME/.profile"
+# Update zsh profile to source the completion script
+ZSH_PROFILE="$HOME/.zshrc"
+if [ ! -f "$ZSH_PROFILE" ]; then
+    ZSH_PROFILE="$HOME/.bash_profile"
 fi
 
-if ! grep -q "source $COMPLETION_DIR/setdns" "$BASH_PROFILE"; then
-    echo "# DNS Manager completion" >> "$BASH_PROFILE"
-    echo "source $COMPLETION_DIR/setdns" >> "$BASH_PROFILE"
-    echo "Added completion script to $BASH_PROFILE"
+if ! grep -q "source $COMPLETION_DIR/setdns" "$ZSH_PROFILE"; then
+    echo "source $COMPLETION_DIR/setdns" >> "$ZSH_PROFILE"
+    echo "Added completion script to $ZSH_PROFILE"
 fi
 
 echo "Installation complete!"
-echo "Please restart your terminal or run 'source $BASH_PROFILE' to enable completion."
+echo "Please restart your terminal to enable completion."
 echo "You can now use 'sudo setdns <dns_name>' to change your DNS settings."
